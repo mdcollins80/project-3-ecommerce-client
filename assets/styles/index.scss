@@ -1,2 +1,14 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+.SubmitButton {
+  background-color: #e7cd5f;
+  color: #000;
+  border-radius: 5px;
+}
+
+#message {
+  background-color: #e7cd5f;
+  color: #000;
+  border-radius: 5px;
+}
