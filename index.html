@@ -60,17 +60,6 @@
       </fieldset>
     </form>
 
-    <form id="create-product">
-        <fieldset>
-          <h4>Create a product</h4>
-          <input type="text" name="product[name]" placeholder="Name">
-          <input type="text" name="product[price]" placeholder="Price">
-          <input type="text" name="product[category]" placeholder="Category">
-          <input type="text" name="product[description]" placeholder="Description">
-          <input type="submit" name="submit" value="Create product">
-        </fieldset>
-    </form>
-
     <form id="get-product">
         <h4>Get all products</h4>
         <fieldset>
@@ -80,24 +69,8 @@
         </fieldset>
     </form>
 
-    <form id="update-product">
-        <fieldset>
-          <h4>Update a product</h4>
-            <input type="text" name="order[id]" id="product-id-update" placeholder="Product Id here">
-            <input type="text" name="product[new]" id="product-update" placeholder="product update">
-          <input type="submit" name="submit" value="Update product">
-        </fieldset>
-    </form>
-
-    <form id="delete-product">
-        <fieldset>
-          <h4>Delete a product</h4>
-            <input type="text" name="product[id]" id="id" placeholder="Id">
-          <input type="submit" name="submit" value="Delete a product">
-        </fieldset>
-    </form>
-
     <div class="product-list"></div>
+    <div class="shopping-cart"></div>
 
     <form action="http://localhost:4741/charges" method="POST">
       <script
