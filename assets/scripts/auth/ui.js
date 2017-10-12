@@ -27,6 +27,10 @@ const signInSuccess = function (data) {
   $('#message').text('Successfully signed in')
   store.user = data.user
   resetForm($('#sign-in'))
+  $('#sign-up').hide()
+  $('#sign-in').hide()
+  $('#change-password').show()
+  $('#sign-out').show()
 }
 
 const signInFailure = function (error) {
@@ -51,6 +55,10 @@ const signOutSuccess = function () {
   console.log('Successfully signed out')
   $('#message').text('Successfully signed out!')
   store.user = null // empty store
+  $('#sign-up').show()
+  $('#sign-in').show()
+  $('#change-password').hide()
+  $('#sign-out').hide()
 }
 
 const signOutFailure = function (error) {

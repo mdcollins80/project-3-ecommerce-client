@@ -12,3 +12,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   color: #000;
   border-radius: 5px;
 }
+
+#change-password, #sign-out {
+ display: none;
+}
