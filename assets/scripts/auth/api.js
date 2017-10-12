@@ -42,9 +42,69 @@ const signOut = function () {
   })
 }
 
+const createProduct = (data) => {
+  console.log(data)
+  console.log('createProduct api function reached!')
+  return $.ajax({
+    url: config.apiOrigin + '/products/',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+    .then((response) => {
+      store.product = response.product
+    })
+}
+
+const getProduct = () => {
+  // console.log('getProducts api function reached!')
+  return $.ajax({
+    url: config.apiOrigin + '/products/',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+    .then((response) => {
+      store.product = response.product
+      return store
+    })
+}
+
+const updateProduct = (data) => {
+  console.log('updateProduct api function reached!')
+  return $.ajax({ // return ajax then set up, url, method, data
+    url: config.apiOrigin + '/products/' + data.product.id,
+    method: 'PATCH',
+    // add Token
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
+const deleteProduct = (id) => {
+  console.log('deleteProduct api function reached!')
+  return $.ajax({ // return ajax then set up, url, method, data
+    url: config.apiOrigin + '/products/' + id,
+    method: 'DELETE',
+    // add Token
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   changePassword,
-  signOut
+  signOut,
+  createProduct,
+  updateProduct,
+  getProduct,
+  deleteProduct
 }
