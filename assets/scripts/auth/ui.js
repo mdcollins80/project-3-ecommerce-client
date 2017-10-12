@@ -31,6 +31,12 @@ const signInSuccess = function (data) {
   $('#sign-in').hide()
   $('#change-password').show()
   $('#sign-out').show()
+  $('.banner').hide()
+  // #create-order, #get-products, #update-product, #delete-product
+  $('#create-order').show()
+  $('#get-products').show()
+  $('#update-product').show()
+  $('#delete-product').show()
 }
 
 const signInFailure = function (error) {
@@ -59,6 +65,13 @@ const signOutSuccess = function () {
   $('#sign-in').show()
   $('#change-password').hide()
   $('#sign-out').hide()
+  $('.banner').show()
+
+  // #create-order, #get-products, #update-product, #delete-product
+  $('#create-order').hide()
+  $('#get-products').hide()
+  $('#update-product').hide()
+  $('#delete-product').hide()
 }
 
 const signOutFailure = function (error) {
