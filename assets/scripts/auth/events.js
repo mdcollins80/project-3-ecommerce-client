@@ -5,6 +5,8 @@ const getFormFields = require(`../../../lib/get-form-fields`)
 const api = require('./api')
 const ui = require('./ui')
 
+//  sign-up, sign-in, change-password, sign-out authEvents
+
 const onSignUp = function (event) {
   const data = getFormFields(this)
   console.log(data)
@@ -41,6 +43,8 @@ const onSignOut = function (event) {
     .catch(ui.signOutFailure)
 }
 
+// end sign-up, sign-in, change-password, sign-out authEvents
+
 const onCreateProduct = (event) => {
   event.preventDefault()
   const data = getFormFields(event.target)
@@ -54,9 +58,9 @@ const onCreateProduct = (event) => {
 const onGetAllProducts = (event) => {
   event.preventDefault()
   console.log('onGetAllProducts events function reached!')
-  api.getProducts()
-    .then(ui.getProductsSuccess)
-    .catch(ui.getProductsFailure)
+  api.getProduct()
+    .then(ui.getProductSuccess)
+    .catch(ui.getProductFailure)
 }
 
 const onUpdateProduct = (event) => {

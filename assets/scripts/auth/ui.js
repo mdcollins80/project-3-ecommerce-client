@@ -111,6 +111,17 @@ const onDeleteProductFailure = (response) => {
   $('#message').text('Unable to delete a product! Try again.')
 }
 
+const getProductSuccess = (id) => {
+  console.log('onDeleteProductSuccess ui reached!')
+  resetForm($('#delete-product'))
+  $('#message').text('You have deleted a product!')
+}
+
+const getProductFailure = (response) => {
+  console.log('onDeleteProductFailure ui reached!')
+  $('#message').text('Unable to delete a product! Try again.')
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -125,5 +136,7 @@ module.exports = {
   onUpdateProductSuccess,
   onUpdateProductFailure,
   onDeleteProductSuccess,
-  onDeleteProductFailure
+  onDeleteProductFailure,
+  getProductSuccess,
+  getProductFailure
 }
