@@ -53,9 +53,6 @@ const createProduct = (data) => {
     },
     data
   })
-    .then((response) => {
-      store.product = response.product
-    })
 }
 
 const getProduct = () => {
@@ -67,10 +64,6 @@ const getProduct = () => {
       Authorization: 'Token token=' + store.user.token
     }
   })
-    .then((response) => {
-      store.product = response.product
-      return store
-    })
 }
 
 const updateProduct = (data) => {

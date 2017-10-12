@@ -79,7 +79,7 @@ const signOutFailure = function (error) {
 
 const createProductSuccess = (response) => {
   console.log('createProductSuccess ui reached!')
-  resetForm($('#create-order'))
+  resetForm($('#create-product'))
   $('#message').text('You have added a product!')
 }
 
@@ -109,7 +109,8 @@ const onDeleteProductFailure = (response) => {
   $('#message').text('Unable to delete a product! Try again.')
 }
 
-const getProductSuccess = (id) => {
+const getProductSuccess = (data) => {
+  console.log(data)
   console.log('ongetProductSuccess ui reached!')
   resetForm($('#get-product'))
   $('#message').text('You have get a product!')
