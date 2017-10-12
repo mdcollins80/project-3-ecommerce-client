@@ -31,10 +31,9 @@ const signInSuccess = function (data) {
   $('#sign-in').hide()
   $('#change-password').show()
   $('#sign-out').show()
-  $('.banner').hide()
   // #create-order, #get-products, #update-product, #delete-product
   $('#create-order').show()
-  $('#get-products').show()
+  $('#get-product').show()
   $('#update-product').show()
   $('#delete-product').show()
 }
@@ -65,11 +64,10 @@ const signOutSuccess = function () {
   $('#sign-in').show()
   $('#change-password').hide()
   $('#sign-out').hide()
-  $('.banner').show()
 
   // #create-order, #get-products, #update-product, #delete-product
   $('#create-order').hide()
-  $('#get-products').hide()
+  $('#get-product').hide()
   $('#update-product').hide()
   $('#delete-product').hide()
 }
@@ -112,14 +110,14 @@ const onDeleteProductFailure = (response) => {
 }
 
 const getProductSuccess = (id) => {
-  console.log('onDeleteProductSuccess ui reached!')
-  resetForm($('#delete-product'))
-  $('#message').text('You have deleted a product!')
+  console.log('ongetProductSuccess ui reached!')
+  resetForm($('#get-product'))
+  $('#message').text('You have get a product!')
 }
 
 const getProductFailure = (response) => {
-  console.log('onDeleteProductFailure ui reached!')
-  $('#message').text('Unable to delete a product! Try again.')
+  console.log('ongetProductFailure ui reached!')
+  $('#message').text('Unable to get a product! Try again.')
 }
 
 module.exports = {

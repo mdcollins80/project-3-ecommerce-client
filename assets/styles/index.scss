@@ -11,6 +11,9 @@ body {
   color: #000;
   border-radius: 5px;
 }
+input {
+  color: #000;
+}
 
 #message {
   background-color: #e7cd5f;
@@ -18,7 +21,7 @@ body {
   border-radius: 5px;
 }
 
-#change-password, #sign-out, #create-order, #get-products, #update-product, #delete-product {
+#change-password, #sign-out, #create-order, #get-product, #update-product, #delete-product {
  display: none;
 }
 
@@ -29,6 +32,20 @@ body {
   margin-top: 10px;
 }
 
-.banner-text {
+.banner-circle {
+  background-color: #000;
   padding-top: 50px;
+  width: 175px;
+  height: 175px;
+  border-radius: 50%;
+}
+
+.banner-text h1 {
+  font-size: 45px;
+  color: #fff;
+  padding: 1% 40% 0 0;
+  margin-left: -50px;
+}
+.banner-icon {
+  padding: 1% 40% 0 40%;
 }

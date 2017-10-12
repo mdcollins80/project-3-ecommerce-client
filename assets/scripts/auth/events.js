@@ -88,7 +88,7 @@ const addHandlers = function () {
   $('#sign-out').on('submit', onSignOut)
   $('#create-product').on('submit', onCreateProduct)
   $('#update-product').on('submit', onUpdateProduct)
-  $('#get-products').on('submit', onGetAllProducts)
+  $('#get-product').on('submit', onGetAllProducts)
   $('delete-product').on('submit', onDeleteProduct)
 }
 
