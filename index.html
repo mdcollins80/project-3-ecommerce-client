@@ -12,11 +12,22 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
-      <h1>Welcome to Nozama.com!</h1>
+      <!-- <h1>Welcome to Nozama.com!</h1> -->
+
+      <div class="banner">
+        <div class="banner-icon">
+          <div class="banner-circle">
+            <div class="banner-text">
+              <h1>Nozama.com</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <p id="message"></p>
       <form id="sign-up">
       <fieldset>
-        <legend>Sign up</legend>
+        <!-- <legend>Sign up</legend> -->
         <input type="text" name="credentials[email]" placeholder="Email">
         <input type="text" name="credentials[password]" placeholder="Password">
         <input type="text" name="credentials[password_confirmation]" placeholder="Password Confirmation">
@@ -26,7 +37,7 @@
 
     <form id="sign-in">
       <fieldset>
-        <legend>Sign in</legend>
+        <!-- <legend>Sign in</legend> -->
         <input type="text" name="credentials[email]" placeholder="Email">
         <input type="text" name="credentials[password]" placeholder="Password">
         <input class="SubmitButton" type="submit" name="submit" value="Sign in">
@@ -35,7 +46,7 @@
 
     <form id="change-password">
       <fieldset>
-        <legend>Change password</legend>
+        <!-- <legend>Change password</legend> -->
         <input type="text" name="passwords[old]" placeholder="Old Password">
         <input type="text" name="passwords[new]" placeholder="New Password">
         <input class="SubmitButton" type="submit" name="submit" value="Change password">
@@ -44,9 +55,46 @@
 
     <form id="sign-out">
       <fieldset>
-        <legend>Sign out</legend>
+        <!-- <legend>Sign out</legend> -->
         <input class="SubmitButton" type="submit" name="submit" value="Sign out">
       </fieldset>
+    </form>
+
+    <form id="create-order">
+        <fieldset>
+          <h4>Create a product</h4>
+          <input type="text" name="product[name]" placeholder="Name">
+          <input type="text" name="product[price]" placeholder="Price">
+          <input type="text" name="product[category]" placeholder="Category">
+          <input type="text" name="product[description]" placeholder="Description">
+          <input type="submit" name="submit" value="Create product">
+        </fieldset>
+    </form>
+
+    <form id="get-product">
+        <h4>Get all products</h4>
+        <fieldset>
+          <div id="get-products-button">
+            <input type="submit" name="submit" value="Get all products">
+          </div>
+        </fieldset>
+    </form>
+
+    <form id="update-product">
+        <fieldset>
+          <h4>Update a product</h4>
+            <input type="text" name="order[id]" id="product-id-update" placeholder="Product Id here">
+            <input type="text" name="product[new]" id="product-update" placeholder="product update">
+          <input type="submit" name="submit" value="Update product">
+        </fieldset>
+    </form>
+
+    <form id="delete-product">
+        <fieldset>
+          <h4>Delete a product</h4>
+            <input type="text" name="product[id]" id="id" placeholder="Id">
+          <input type="submit" name="submit" value="Delete a product">
+        </fieldset>
     </form>
 
     </body>

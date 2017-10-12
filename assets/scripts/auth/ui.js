@@ -27,6 +27,15 @@ const signInSuccess = function (data) {
   $('#message').text('Successfully signed in')
   store.user = data.user
   resetForm($('#sign-in'))
+  $('#sign-up').hide()
+  $('#sign-in').hide()
+  $('#change-password').show()
+  $('#sign-out').show()
+  // #create-order, #get-products, #update-product, #delete-product
+  $('#create-order').show()
+  $('#get-product').show()
+  $('#update-product').show()
+  $('#delete-product').show()
 }
 
 const signInFailure = function (error) {
@@ -51,11 +60,64 @@ const signOutSuccess = function () {
   console.log('Successfully signed out')
   $('#message').text('Successfully signed out!')
   store.user = null // empty store
+  $('#sign-up').show()
+  $('#sign-in').show()
+  $('#change-password').hide()
+  $('#sign-out').hide()
+
+  // #create-order, #get-products, #update-product, #delete-product
+  $('#create-order').hide()
+  $('#get-product').hide()
+  $('#update-product').hide()
+  $('#delete-product').hide()
 }
 
 const signOutFailure = function (error) {
   console.log(error)
   $('#message').text('Error on sign out!')
+}
+
+const createProductSuccess = (response) => {
+  console.log('createProductSuccess ui reached!')
+  resetForm($('#create-order'))
+  $('#message').text('You have added a product!')
+}
+
+const createProductFailure = (response) => {
+  $('#message').text('Adding an order failed. Try again.')
+}
+
+const onUpdateProductSuccess = (id) => {
+  console.log('onUpdateProductSuccess ui reached!')
+  resetForm($('#update-book'))
+  $('#message').text('You have updated an order!')
+}
+
+const onUpdateProductFailure = (response) => {
+  console.log('onUpdateProductFailure ui reached!')
+  $('#message').text('Unable to update order! Try again.')
+}
+
+const onDeleteProductSuccess = (id) => {
+  console.log('onDeleteProductSuccess ui reached!')
+  resetForm($('#delete-product'))
+  $('#message').text('You have deleted a product!')
+}
+
+const onDeleteProductFailure = (response) => {
+  console.log('onDeleteProductFailure ui reached!')
+  $('#message').text('Unable to delete a product! Try again.')
+}
+
+const getProductSuccess = (id) => {
+  console.log('ongetProductSuccess ui reached!')
+  resetForm($('#get-product'))
+  $('#message').text('You have get a product!')
+}
+
+const getProductFailure = (response) => {
+  console.log('ongetProductFailure ui reached!')
+  $('#message').text('Unable to get a product! Try again.')
 }
 
 module.exports = {
@@ -66,5 +128,13 @@ module.exports = {
   changePasswordSuccess,
   changePasswordFailure,
   signOutSuccess,
-  signOutFailure
+  signOutFailure,
+  createProductSuccess,
+  createProductFailure,
+  onUpdateProductSuccess,
+  onUpdateProductFailure,
+  onDeleteProductSuccess,
+  onDeleteProductFailure,
+  getProductSuccess,
+  getProductFailure
 }
