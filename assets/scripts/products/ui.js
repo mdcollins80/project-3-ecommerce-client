@@ -2,6 +2,8 @@
 
 const store = require('../store')
 
+const showProducts = require('../templates/product-list.handlebars')
+
 const resetForm = function resetForm ($form) {
   $form.find('input:text, input:password, input:file, select, textarea').val('')
   $form.find('input:radio, input:checkbox')
@@ -44,6 +46,10 @@ const getProductSuccess = (data) => {
   console.log(data)
   console.log('ongetProductSuccess ui reached!')
   resetForm($('#get-product'))
+
+  const showProductsHtml = showProducts({ products: data.products })
+  $('.products-table').remove()
+  $('.product-list').append(showProductsHtml)
   $('#message').text('You have get a product!')
 }
 
