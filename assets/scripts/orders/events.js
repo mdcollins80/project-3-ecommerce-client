@@ -37,16 +37,16 @@ const onUpdateOrder = (event) => {
   }
 }
 
-// const onCreatePick = function (event) {
-//   event.preventDefault()
-//   if (event.target && event.target.matches('form.pick')) {
-//     const data = getFormFields(event.target)
-//     data.pick.user_id = store.user.id.toString()
-//     if (data.pick.winning_team.length > 0) {
-//       $(event.target).children('button').remove()
+const onShowOrder = (event) => {
+  event.preventDefault()
+  api.showOrder()
+    .then(ui.onShowOrderSuccess)
+    .catch(ui.onShowOrderFailure)
+}
 
 const addHandlers = function () {
   $('#create-order-button').on('submit', onCreateOrder)
+  $('#show-cart-button').on('submit', onShowOrder)
   $('.product-list').on('submit', onUpdateOrder)
 }
 
