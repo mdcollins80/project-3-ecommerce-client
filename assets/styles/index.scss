@@ -19,10 +19,12 @@ input {
   background-color: #e7cd5f;
   color: #000;
   border-radius: 5px;
+  margin: 5px;
 }
 
 #change-password, #sign-out, #create-order, #get-product, #update-product, #delete-product {
  display: none;
+ text-align: left;
 }
 
 .banner {
@@ -30,6 +32,7 @@ input {
   height: 200px;
   background-color: #e7cd5f;
   margin-top: 10px;
+  border-radius: 5px;
 }
 
 .banner-circle {
@@ -55,4 +58,8 @@ input {
   border: 1px solid #fff;
   overflow-y:auto;
   height: 400px;
+}
+
+.container {
+  display: none;
 }

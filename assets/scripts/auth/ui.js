@@ -33,6 +33,7 @@ const signInSuccess = function (data) {
   $('#sign-in').hide()
   $('#change-password').show()
   $('#sign-out').show()
+  $('.container').show()
   // #create-order
   $('#create-order').show()
   productsApi.getProduct()
@@ -66,7 +67,7 @@ const signOutSuccess = function () {
   $('#sign-in').show()
   $('#change-password').hide()
   $('#sign-out').hide()
-
+  $('.container').hide()
   // #create-order, #get-products, #update-product, #delete-product
   $('#create-order').hide()
   $('#get-product').hide()

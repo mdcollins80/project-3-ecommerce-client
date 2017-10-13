@@ -15,6 +15,11 @@ const onCreateProduct = (event) => {
     .catch(ui.createProductFailure)
 }
 
+const onDeleteProduct = (event) => {
+  event.preventDefault()
+  console.log('onDeleteProduct events function reached!')
+}
+
 // This function was moved to fire after sign in success:
 //
 // const onGetAllProducts = (event) => {
@@ -45,6 +50,7 @@ const onCreateProduct = (event) => {
 
 const addHandlers = function () {
   $('#create-product').on('submit', onCreateProduct)
+  $('.remove-from-cart-btn').on('submit', onDeleteProduct)
   // $('#update-product').on('submit', onUpdateProduct)
   // $('#get-product').on('submit', onGetAllProducts)
   // $('delete-product').on('submit', onDeleteProduct)
