@@ -5,6 +5,7 @@ const config = require('./config')
 const authEvents = require('./auth/events')
 const productEvents = require('./products/events')
 const ordersEvents = require('./orders/events')
+const swipeEvents = require('./swipe/events')
 
 $(() => {
   setAPIOrigin(location, config)
@@ -20,4 +21,5 @@ $(() => {
   authEvents.addHandlers()
   productEvents.addHandlers()
   ordersEvents.addHandlers()
+  swipeEvents.addHandlers()
 })
