@@ -7,10 +7,8 @@ const ui = require('./ui')
 
 const onCreateOrder = (event) => {
   event.preventDefault()
-  const data = getFormFields(event.target)
-  console.log(data)
   console.log('onCreateOrder events function reached!')
-  api.createOrder(data)
+  api.createOrder()
     .then(ui.createOrderSuccess)
     .catch(ui.createOrderFailure)
 }
@@ -47,7 +45,7 @@ const onUpdateOrder = (event) => {
 //       $(event.target).children('button').remove()
 
 const addHandlers = function () {
-  $('#create-order').on('submit', onCreateOrder)
+  $('#create-order-button').on('submit', onCreateOrder)
   $('.product-list').on('submit', onUpdateOrder)
 }
 
