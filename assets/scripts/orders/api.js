@@ -19,6 +19,17 @@ const createOrder = () => {
   })
 }
 
+const showOrder = () => {
+  // console.log('getOrders api function reached!')
+  return $.ajax({
+    url: config.apiOrigin + '/orders/' + store.order.id,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 const getOrder = () => {
   // console.log('getOrders api function reached!')
   return $.ajax({
@@ -58,5 +69,6 @@ module.exports = {
   createOrder,
   updateOrder,
   getOrder,
-  deleteOrder
+  deleteOrder,
+  showOrder
 }
