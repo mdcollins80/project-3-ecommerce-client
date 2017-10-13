@@ -26,14 +26,14 @@ const onUpdateOrder = (event) => {
           category: products.products.category,
           price: products.products.price
         },
-        purchaseStatus: 'bleep'
+        purchaseStatus: 'false'
       }
     }
     api.updateOrder(data)
-      .then(console.log)
-      .catch(console.log)
+      .then(ui.onUpdateOrderSuccess)
+      .catch(ui.onUpdateOrderFailure)
   } else {
-    console.log('farts')
+    console.log('farts...Add to Cart button did not work!')
   }
 }
 

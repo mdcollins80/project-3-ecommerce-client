@@ -1,6 +1,7 @@
 'use strict'
 
 const store = require('../store')
+const api = require('./api')
 
 const showOrderProducts = require('../templates/shopping-cart.handlebars')
 
@@ -23,6 +24,9 @@ const createOrderFailure = (response) => {
 const onUpdateOrderSuccess = (id) => {
   console.log('onUpdateOrderSuccess ui reached!')
   $('#message').text('You have updated an order!')
+  api.showOrder()
+    .then(onShowOrderSuccess)
+    .catch(onShowOrderFailure)
 }
 
 const onUpdateOrderFailure = (response) => {
@@ -52,6 +56,10 @@ const onShowOrderSuccess = (data) => {
   $('.cart-table').remove()
   $('.shopping-cart').append(showOrderProductsHtml)
   $('#message').text('You got your cart!')
+}
+
+const onShowOrderFailure = () => {
+  $('#message').text('Couldn\'t show your shopping cart!')
 }
 
 const getOrderFailure = (response) => {
