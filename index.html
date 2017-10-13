@@ -72,11 +72,12 @@
     <div class="product-list"></div>
     <div class="shopping-cart"></div>
 
-    <form action="http://localhost:4741/charges" method="POST">
+    <form id="stipe-form" action="http://localhost:4741/charges" method="POST">
+      <input type="hidden" name="stripeAmount" id="stripeAmount" value="921000" />
+      <input type="hidden" name="business_category" id="business_category" value="2" />
       <script
         src="https://checkout.stripe.com/checkout.js" class="stripe-button"
         data-key="pk_test_IWtf8h0ew1zAXAmlNvnTtXKo"
-        data-amount="2000"
         data-name="Stripe.com"
         data-description="2 widgets"
         data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
