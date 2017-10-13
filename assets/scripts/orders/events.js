@@ -1,5 +1,6 @@
 'use strict'
 
+const store = require('../store')
 const getFormFields = require(`../../../lib/get-form-fields`)
 
 const api = require('./api')
@@ -19,7 +20,7 @@ const onUpdateOrder = (event) => {
     const products = getFormFields(event.target)
     const data = {
       order: {
-        id: '59de62b847bf685e5884174d',
+        id: store.order.id,
         products: {
           name: products.products.name,
           category: products.products.category,
