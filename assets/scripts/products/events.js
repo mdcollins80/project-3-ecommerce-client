@@ -15,13 +15,15 @@ const onCreateProduct = (event) => {
     .catch(ui.createProductFailure)
 }
 
-const onGetAllProducts = (event) => {
-  event.preventDefault()
-  console.log('onGetAllProducts events function reached!')
-  api.getProduct()
-    .then(ui.getProductSuccess)
-    .catch(ui.getProductFailure)
-}
+// This function was moved to fire after sign in success:
+//
+// const onGetAllProducts = (event) => {
+//   event.preventDefault()
+//   console.log('onGetAllProducts events function reached!')
+//   api.getProduct()
+//     .then(ui.getProductSuccess)
+//     .catch(ui.getProductFailure)
+// }
 
 const onUpdateProduct = (event) => {
   event.preventDefault()
@@ -44,7 +46,7 @@ const onDeleteProduct = (event) => {
 const addHandlers = function () {
   $('#create-product').on('submit', onCreateProduct)
   $('#update-product').on('submit', onUpdateProduct)
-  $('#get-product').on('submit', onGetAllProducts)
+  // $('#get-product').on('submit', onGetAllProducts)
   $('delete-product').on('submit', onDeleteProduct)
 }
 
