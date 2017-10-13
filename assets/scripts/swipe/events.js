@@ -1,42 +1,29 @@
 'use strict'
 
-// const getFormFields = require(`../../../lib/get-form-fields`)
-// const api = require('./api')
-// const ui = require('./ui')
+const getFormFields = require(`../../../lib/get-form-fields`)
+const api = require('./api')
+const ui = require('./ui')
 
-// const handler = StripeCheckout.configure({
-//   key: 'pk_test_IWtf8h0ew1zAXAmlNvnTtXKo',
-//   image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
-//   locale: 'auto',
-//   token: function (token) {
-//     // You can access the token ID with `token.id`.
-//     // Get the token ID to your server-side code for use.
-//   }
-// })
+const checkoutHandler = StripeCheckout.configure({
+  key: 'pk_test_IWtf8h0ew1zAXAmlNvnTtXKo',
+  locale: 'auto'
+})
 
-// const onSwipeCheckout = function (event) {
-//   event.preventDefault
-//   const data = $(this).serializeArray()
-//   console.log data
-//   // process data and send ajax request
-//
-//   $.ajax()
-//
-//   // Prevent form submit.
-//   return false;
+// function handleToken (token) {
+//   fetch('http://localhost:4741/charges', {
+//     method: 'POST',
+//     headers: {'Content-Type': 'application/json'},
+//     body: JSON.stringify(token)
+//   })
+//     .then(data => console.log('data is ', data))
 // }
 
 const addHandlers = function () {
-  $('#stripe-form').get(0).submit = function (event) {
-    const data = $(this).serializeArray()
-    console.log(data)
-    // process data and send ajax request
-
-    // $.ajax(...)
-
-    // Prevent form submit.
-    return false
-  }
+  $('#buttonCheckout').on('click', function (ev) {
+    checkoutHandler.open({
+      token: api.handleToken
+    })
+  })
 }
 
 module.exports = {

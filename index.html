@@ -10,6 +10,7 @@
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="https://checkout.stripe.com/checkout.js"></script>
     </head>
     <body class="container-fluid">
       <!-- <h1>Welcome to Nozama.com!</h1> -->
@@ -76,19 +77,11 @@
       </div>
     </div>
 
-    <form id="stripe-form">
-      <input type="hidden" name="stripeAmount" id="stripeAmount" value="921000" />
-      <input type="hidden" name="business_category" id="business_category" value="2" />
-      <script
-        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-        data-key="pk_test_IWtf8h0ew1zAXAmlNvnTtXKo"
-        data-name="Stripe.com"
-        data-description="2 widgets"
-        data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-        data-locale="auto"
-        data-zip-code="true">
-      </script>
-    </form>
+    <h2>Stripe Checkout Example</h2>
+
+     <div id="shop">
+       <button id="buttonCheckout">Checkout</button>
+     </div>
 
     </body>
 </html>
