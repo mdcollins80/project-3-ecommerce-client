@@ -1,6 +1,8 @@
 'use strict'
 
 const store = require('../store')
+const productsApi = require('../products/api')
+const productsUi = require('../products/ui')
 
 const resetForm = function resetForm ($form) {
   $form.find('input:text, input:password, input:file, select, textarea').val('')
@@ -31,11 +33,11 @@ const signInSuccess = function (data) {
   $('#sign-in').hide()
   $('#change-password').show()
   $('#sign-out').show()
-  // #create-order, #get-products, #update-product, #delete-product
+  // #create-order
   $('#create-order').show()
-  $('#get-product').show()
-  $('#update-product').show()
-  $('#delete-product').show()
+  productsApi.getProduct()
+    .then(productsUi.getProductSuccess)
+    .catch(productsUi.getProductFailure)
 }
 
 const signInFailure = function (error) {
