@@ -12,9 +12,9 @@
       <td>{{product.price}}</td>
       <td >
         <form class="order-product">
-          <input type="hidden" placeholder="{{product.name}}" name="product[Name]">
-          <input type="hidden" placeholder="{{product.category}}" name="product[Category]">
-          <input type="hidden" placeholder="{{product.price}}" name="product[Price]">
+          <input type="hidden" value="{{product.name}}" name="products[name]">
+          <input type="hidden" value="{{product.category}}" name="products[category]">
+          <input type="hidden" value="{{product.price}}" name="products[price]">
           <button type="submit" class="btn btn-success add-to-cart-btn">Add to Cart</button>
         </form>
       </td>
