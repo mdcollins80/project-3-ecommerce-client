@@ -2,7 +2,7 @@
 
 const store = require('../store')
 
-// const showOrders = require('../templates/order-list.handlebars')
+const showOrderProducts = require('../templates/shopping-cart.handlebars')
 
 const resetForm = function resetForm ($form) {
   $form.find('input:text, input:password, input:file, select, textarea').val('')
@@ -22,7 +22,6 @@ const createOrderFailure = (response) => {
 
 const onUpdateOrderSuccess = (id) => {
   console.log('onUpdateOrderSuccess ui reached!')
-  resetForm($('#update-book'))
   $('#message').text('You have updated an order!')
 }
 
@@ -42,20 +41,22 @@ const onDeleteOrderFailure = (response) => {
   $('#message').text('Unable to delete a order! Try again.')
 }
 
-// const getOrderSuccess = (data) => {
-//   console.log(data)
-//   console.log('ongetOrderSuccess ui reached!')
-//   resetForm($('#get-order'))
-//
-//   const showOrdersHtml = showOrders({ orders: data.orders })
-//   $('.orders-table').remove()
-//   $('.order-list').append(showOrdersHtml)
-//   $('#message').text('You have get a order!')
-// }
+const onShowOrderSuccess = (data) => {
+  console.log('data is: ', data)
+  console.log('data.order.products is: ', data.order.products)
+  console.log('ongetOrderSuccess ui reached!')
+  const products = data.order.products
+  console.log('products is: ', products)
+
+  const showOrderProductsHtml = showOrderProducts({ products: products })
+  $('.cart-table').remove()
+  $('.shopping-cart').append(showOrderProductsHtml)
+  $('#message').text('You got your cart!')
+}
 
 const getOrderFailure = (response) => {
   console.log('ongetOrderFailure ui reached!')
-  $('#message').text('Unable to get a order! Try again.')
+  $('#message').text('Unable to get your cart! Try again.')
 }
 
 module.exports = {
@@ -65,6 +66,6 @@ module.exports = {
   onUpdateOrderFailure,
   onDeleteOrderSuccess,
   onDeleteOrderFailure,
-  // getOrderSuccess,
+  onShowOrderSuccess,
   getOrderFailure
 }
