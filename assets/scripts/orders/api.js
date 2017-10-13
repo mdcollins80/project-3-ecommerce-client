@@ -3,8 +3,7 @@
 const config = require('../config')
 const store = require('../store')
 
-const createOrder = (data) => {
-  console.log(data)
+const createOrder = () => {
   console.log('createOrder api function reached!')
   return $.ajax({
     url: config.apiOrigin + '/orders/',
@@ -12,7 +11,22 @@ const createOrder = (data) => {
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
-    data
+    data: {
+      'order': {
+        'purchaseStatus': 'false'
+      }
+    }
+  })
+}
+
+const showOrder = () => {
+  // console.log('getOrders api function reached!')
+  return $.ajax({
+    url: config.apiOrigin + '/orders/' + store.order.id,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
   })
 }
 
@@ -55,5 +69,6 @@ module.exports = {
   createOrder,
   updateOrder,
   getOrder,
-  deleteOrder
+  deleteOrder,
+  showOrder
 }

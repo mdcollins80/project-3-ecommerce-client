@@ -1,8 +1,9 @@
 'use strict'
 
 const store = require('../store')
+const api = require('./api')
 
-const showProducts = require('../templates/product-list.handlebars')
+const showOrderProducts = require('../templates/shopping-cart.handlebars')
 
 const resetForm = function resetForm ($form) {
   $form.find('input:text, input:password, input:file, select, textarea').val('')
@@ -10,61 +11,69 @@ const resetForm = function resetForm ($form) {
     .removeAttr('checked').removeAttr('selected')
 }
 
-const createProductSuccess = (response) => {
-  console.log('createProductSuccess ui reached!')
-  resetForm($('#create-product'))
-  $('#message').text('You have added a product!')
+const createOrderSuccess = (response) => {
+  console.log('createOrderSuccess ui reached!')
+  $('#message').text('You have added an order!')
+  store.order = response.order
 }
 
-const createProductFailure = (response) => {
+const createOrderFailure = (response) => {
   $('#message').text('Adding an order failed. Try again.')
 }
 
-const onUpdateProductSuccess = (id) => {
-  console.log('onUpdateProductSuccess ui reached!')
-  resetForm($('#update-book'))
+const onUpdateOrderSuccess = (id) => {
+  console.log('onUpdateOrderSuccess ui reached!')
   $('#message').text('You have updated an order!')
+  api.showOrder()
+    .then(onShowOrderSuccess)
+    .catch(onShowOrderFailure)
 }
 
-const onUpdateProductFailure = (response) => {
-  console.log('onUpdateProductFailure ui reached!')
+const onUpdateOrderFailure = (response) => {
+  console.log('onUpdateOrderFailure ui reached!')
   $('#message').text('Unable to update order! Try again.')
 }
 
-const onDeleteProductSuccess = (id) => {
-  console.log('onDeleteProductSuccess ui reached!')
-  resetForm($('#delete-product'))
-  $('#message').text('You have deleted a product!')
+const onDeleteOrderSuccess = (id) => {
+  console.log('onDeleteOrderSuccess ui reached!')
+  resetForm($('#delete-order'))
+  $('#message').text('You have deleted a order!')
 }
 
-const onDeleteProductFailure = (response) => {
-  console.log('onDeleteProductFailure ui reached!')
-  $('#message').text('Unable to delete a product! Try again.')
+const onDeleteOrderFailure = (response) => {
+  console.log('onDeleteOrderFailure ui reached!')
+  $('#message').text('Unable to delete a order! Try again.')
 }
 
-const getProductSuccess = (data) => {
-  console.log(data)
-  console.log('ongetProductSuccess ui reached!')
-  resetForm($('#get-product'))
+const onShowOrderSuccess = (data) => {
+  console.log('data is: ', data)
+  console.log('data.order.products is: ', data.order.products)
+  console.log('ongetOrderSuccess ui reached!')
+  const products = data.order.products
+  console.log('products is: ', products)
 
-  const showProductsHtml = showProducts({ products: data.products })
-  $('.products-table').remove()
-  $('.product-list').append(showProductsHtml)
-  $('#message').text('You have get a product!')
+  const showOrderProductsHtml = showOrderProducts({ products: products })
+  $('.cart-table').remove()
+  $('.shopping-cart').append(showOrderProductsHtml)
+  $('#message').text('You got your cart!')
 }
 
-const getProductFailure = (response) => {
-  console.log('ongetProductFailure ui reached!')
-  $('#message').text('Unable to get a product! Try again.')
+const onShowOrderFailure = () => {
+  $('#message').text('Couldn\'t show your shopping cart!')
+}
+
+const getOrderFailure = (response) => {
+  console.log('ongetOrderFailure ui reached!')
+  $('#message').text('Unable to get your cart! Try again.')
 }
 
 module.exports = {
-  createProductSuccess,
-  createProductFailure,
-  onUpdateProductSuccess,
-  onUpdateProductFailure,
-  onDeleteProductSuccess,
-  onDeleteProductFailure,
-  getProductSuccess,
-  getProductFailure
+  createOrderSuccess,
+  createOrderFailure,
+  onUpdateOrderSuccess,
+  onUpdateOrderFailure,
+  onDeleteOrderSuccess,
+  onDeleteOrderFailure,
+  onShowOrderSuccess,
+  getOrderFailure
 }

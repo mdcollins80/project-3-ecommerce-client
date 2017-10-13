@@ -14,11 +14,12 @@
       <td>{{product.category}}</td>
       <td>{{product.price}}</td>
       <td >
-        <form class="order-product">
-          <input type="hidden" placeholder="{{product.name}}" name="product[Name]">
-          <input type="hidden" placeholder="{{product.category}}" name="product[Category]">
-          <input type="hidden" placeholder="{{product.price}}" name="product[Price]">
-          <button type="submit" class="btn btn-success add-to-cart-btn">Add to Cart</button>
+        <form class="cart-product">
+          <input type="hidden" value="{{product.name}}" name="product[name]">
+          <input type="hidden" value="{{product.category}}" name="product[category]">
+          <input type="hidden" value="{{product.price}}" name="product[price]">
+          <input type="hidden" value="{{product.id}}" name="product[id]">
+          <button type="submit" class="btn btn-danger remove-from-cart-btn">Remove from Cart</button>
         </form>
       </td>
     </tr>
