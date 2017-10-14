@@ -75,6 +75,8 @@ const signOutSuccess = function () {
   $('#get-product').hide()
   $('#update-product').hide()
   $('#delete-product').hide()
+  $('#create-order-button').hide()
+  $('#previous-orders-button').hide()
 }
 
 const signOutFailure = function (error) {
