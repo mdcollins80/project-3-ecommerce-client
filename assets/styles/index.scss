@@ -62,3 +62,18 @@ input {
 .container {
   display: none;
 }
+
+footer {
+  margin: 10% 0 5% 0;
+  text-align: center;
+  color: #fff;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+footer a:hover {
+  color: #e7cd5f;
+}
