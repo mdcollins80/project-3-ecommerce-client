@@ -4,9 +4,9 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 body {
   color: #fff;
   background-color: #000;
-  text-align: center;
 }
-.SubmitButton {
+
+.SubmitButton, button {
   background-color: #e7cd5f;
   color: #000;
   border-radius: 5px;
@@ -22,9 +22,8 @@ input {
   margin: 5px;
 }
 
-#change-password, #sign-out, #create-order, #get-product, #update-product, #delete-product {
+#change-password, #sign-out, #create-order, #get-product, #update-product, #delete-product, #previous-orders-button, #create-order-button {
  display: none;
- text-align: left;
 }
 
 .banner {

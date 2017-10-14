@@ -35,7 +35,9 @@ const signInSuccess = function (data) {
   $('#sign-out').show()
   $('.container').show()
   // #create-order
+  $('#create-order-button').show()
   $('#create-order').show()
+  $('#previous-orders-button').show()
   productsApi.getProduct()
     .then(productsUi.getProductSuccess)
     .catch(productsUi.getProductFailure)
