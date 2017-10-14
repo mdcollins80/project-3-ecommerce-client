@@ -62,10 +62,18 @@ const onShowOrderFailure = () => {
   $('#message').text('Couldn\'t show your shopping cart!')
 }
 
-const getOrderFailure = (response) => {
-  console.log('ongetOrderFailure ui reached!')
-  $('#message').text('Unable to get your cart! Try again.')
+const ShowPreviousOrdersSuccess = (data) => {
+  console.log('ShowPreviousOrdersSuccess ui function reached!')
 }
+
+const ShowPreviousOrdersFailure = (data) => {
+  console.log('ShowPreviousOrdersFailure ui function reached!')
+}
+
+// const getOrderFailure = (response) => {
+//   console.log('ongetOrderFailure ui reached!')
+//   $('#message').text('Unable to get your cart! Try again.')
+// }
 
 module.exports = {
   createOrderSuccess,
@@ -75,5 +83,7 @@ module.exports = {
   onDeleteOrderSuccess,
   onDeleteOrderFailure,
   onShowOrderSuccess,
-  getOrderFailure
+  onShowOrderFailure,
+  ShowPreviousOrdersSuccess,
+  ShowPreviousOrdersFailure
 }

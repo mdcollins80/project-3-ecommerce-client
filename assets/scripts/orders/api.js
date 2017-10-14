@@ -20,20 +20,9 @@ const createOrder = () => {
 }
 
 const showOrder = () => {
-  // console.log('getOrders api function reached!')
+  // console.log('showOrder api function reached!')
   return $.ajax({
     url: config.apiOrigin + '/orders/' + store.order.id,
-    method: 'GET',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    }
-  })
-}
-
-const getOrder = () => {
-  // console.log('getOrders api function reached!')
-  return $.ajax({
-    url: config.apiOrigin + '/orders/',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -65,10 +54,23 @@ const deleteOrder = (id) => {
   })
 }
 
+const showPreviousOrders = () => {
+  console.log('showPreviousOrders api function reached!')
+  console.log('store.order.id is ', store.order.id) // shows current order
+  console.log('store.user.id is ', store.user.id) // shows user id
+  return $.ajax({
+    url: config.apiOrigin + '/orders/' + store.order.id,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   createOrder,
   updateOrder,
-  getOrder,
   deleteOrder,
-  showOrder
+  showOrder,
+  showPreviousOrders
 }

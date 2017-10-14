@@ -66,11 +66,21 @@ const onShowOrder = (event) => {
     .catch(ui.onShowOrderFailure)
 }
 
+// Show previous orders
+const onShowPreviousOrders = (event) => {
+  event.preventDefault()
+  // console.log('onShowPreviousOrders events function reached!')
+  api.showPreviousOrders()
+    .then(ui.ShowPreviousOrdersSuccess)
+    .catch(ui.ShowPreviousOrdersFailure)
+}
+
 const addHandlers = function () {
   $('#create-order-button').on('submit', onCreateOrder)
   $('#show-cart-button').on('submit', onShowOrder)
   $('.product-list').on('submit', onUpdateOrderAdd)
   $('.shopping-cart').on('submit', onUpdateOrderRemove)
+  $('#previous-orders-button').on('submit', onShowPreviousOrders)
 }
 
 module.exports = {
