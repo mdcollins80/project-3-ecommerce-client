@@ -55,7 +55,7 @@ const onUpdateOrderRemove = (event) => {
       .then(ui.onUpdateOrderSuccess)
       .catch(ui.onUpdateOrderFailure)
   } else {
-    console.log('farts...Remove from Cart button did not work!')
+    $('#message').text('Remove from Cart button did not work!')
   }
 }
 
