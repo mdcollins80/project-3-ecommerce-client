@@ -51,7 +51,11 @@ const onShowOrderSuccess = (data) => {
   console.log('ongetOrderSuccess ui reached!')
   const products = data.order.products
   console.log('products is: ', products)
-
+  const total = products.reduce(function (sum, num) {
+    return sum + num.price
+  }
+    , 0)
+  store.total = total
   const showOrderProductsHtml = showOrderProducts({ products: products })
   $('.cart-table').remove()
   $('.shopping-cart').append(showOrderProductsHtml)

@@ -4,11 +4,12 @@ const config = require('../config')
 const store = require('../store')
 
 const handleToken = function (token) {
+  console.log('store total is: ', store.total)
   return $.ajax({
     url: config.apiOrigin + '/charges',
     method: 'POST',
     data: {
-      "amount": 800,
+      "amount": store.total,
       "token": token
     }
   })
