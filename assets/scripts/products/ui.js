@@ -44,13 +44,13 @@ const onDeleteProductFailure = (response) => {
 
 const getProductSuccess = (data) => {
   console.log(data)
-  console.log('ongetProductSuccess ui reached!')
+  // console.log('ongetProductSuccess ui reached!')
   resetForm($('#get-product'))
 
   const showProductsHtml = showProducts({ products: data.products })
   $('.products-table').remove()
   $('.product-list').append(showProductsHtml)
-  $('#message').text('You have get a product!')
+  // $('#message').text('You have got products!')
 }
 
 const getProductFailure = (response) => {

@@ -35,7 +35,9 @@ const signInSuccess = function (data) {
   $('#sign-out').show()
   $('.container').show()
   // #create-order
+  $('#create-order-button').show()
   $('#create-order').show()
+  $('#previous-orders-button').show()
   productsApi.getProduct()
     .then(productsUi.getProductSuccess)
     .catch(productsUi.getProductFailure)
@@ -73,6 +75,8 @@ const signOutSuccess = function () {
   $('#get-product').hide()
   $('#update-product').hide()
   $('#delete-product').hide()
+  $('#create-order-button').hide()
+  $('#previous-orders-button').hide()
 }
 
 const signOutFailure = function (error) {
