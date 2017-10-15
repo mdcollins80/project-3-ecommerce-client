@@ -11,8 +11,8 @@ const resetForm = function resetForm ($form) {
 }
 
 const signUpSuccess = function (data) {
-  console.log(data)
-  console.log('Successfully signed up')
+  // console.log(data)
+  // console.log('Successfully signed up')
   $('#message').text('Successfully signed up').show().fadeOut(8000)
   resetForm($('#sign-up'))
 }
@@ -81,8 +81,8 @@ const signOutSuccess = function () {
   $('.previous-orders').empty()
 }
 
-const signOutFailure = function (error) {
-  console.log(error)
+const signOutFailure = function () {
+  // console.log(error)
   $('#message').text('Error on sign out!').show().fadeOut(8000)
 }
 
