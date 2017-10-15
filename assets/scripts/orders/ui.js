@@ -15,6 +15,7 @@ const resetForm = function resetForm ($form) {
 const createOrderSuccess = (response) => {
   console.log('createOrderSuccess ui reached!')
   $('#message').text('You have added an order!')
+  $('.shopping-cart').empty()
   store.order = response.order
 }
 

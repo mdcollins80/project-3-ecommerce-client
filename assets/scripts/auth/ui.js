@@ -13,20 +13,20 @@ const resetForm = function resetForm ($form) {
 const signUpSuccess = function (data) {
   console.log(data)
   console.log('Successfully signed up')
-  $('#message').text('Successfully signed up')
+  $('#message').text('Successfully signed up').show().fadeOut(8000)
   resetForm($('#sign-up'))
 }
 
 const signUpFailure = function (error) {
   console.error(error)
-  $('#message').text('Error on sign up')
+  $('#message').text('Error on sign up').show().fadeOut(8000)
   resetForm($('#sign-up'))
 }
 
 const signInSuccess = function (data) {
-  console.log(data)
-  console.log('Successfully signed in')
-  $('#message').text('Successfully signed in')
+  // console.log(data)
+  // console.log('Successfully signed in')
+  $('#message').text('Successfully signed in').show().fadeOut(8000)
   store.user = data.user
   resetForm($('#sign-in'))
   $('#sign-up').hide()
@@ -44,27 +44,25 @@ const signInSuccess = function (data) {
     .catch(productsUi.getProductFailure)
 }
 
-const signInFailure = function (error) {
-  console.error(error)
-  $('#message').text('Error on sign in')
+const signInFailure = function () {
+  // console.error(error)
+  $('#message').text('Error on sign in').show().fadeOut(8000)
   resetForm($('#sign-in'))
 }
 
 const changePasswordSuccess = function () {
-  console.log('Successfully changed password')
-  $('#message').text('Successfully changed password!')
+  // console.log('Successfully changed password')
+  $('#password-message').text('Successfully changed password!').show().fadeOut(8000)
   resetForm($('#change-password'))
 }
 
-const changePasswordFailure = function (error) {
-  console.log(error)
-  $('#message').text('Error on change password!')
+const changePasswordFailure = function () {
+  $('#password-message').text('Error on change password!').show().fadeOut(8000)
   resetForm($('#change-password'))
 }
 
 const signOutSuccess = function () {
-  console.log('Successfully signed out')
-  $('#message').text('Successfully signed out!')
+  $('#message').text('Successfully signed out!').show().fadeOut(8000)
   store.user = null // empty store
   $('#sign-up').show()
   $('#sign-in').show()
@@ -85,7 +83,7 @@ const signOutSuccess = function () {
 
 const signOutFailure = function (error) {
   console.log(error)
-  $('#message').text('Error on sign out!')
+  $('#message').text('Error on sign out!').show().fadeOut(8000)
 }
 
 module.exports = {
