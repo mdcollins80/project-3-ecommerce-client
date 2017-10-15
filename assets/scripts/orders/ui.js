@@ -64,6 +64,7 @@ const onShowOrderFailure = () => {
 
 const ShowPreviousOrdersSuccess = (data) => {
   console.log('ShowPreviousOrdersSuccess ui function reached!')
+  console.log(data)
 }
 
 const ShowPreviousOrdersFailure = (data) => {

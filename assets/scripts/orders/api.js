@@ -56,10 +56,9 @@ const deleteOrder = (id) => {
 
 const showPreviousOrders = () => {
   console.log('showPreviousOrders api function reached!')
-  console.log('store.order.id is ', store.order.id) // shows current order
   console.log('store.user.id is ', store.user.id) // shows user id
   return $.ajax({
-    url: config.apiOrigin + '/orders/' + store.order.id,
+    url: config.apiOrigin + '/orders/',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
