@@ -79,6 +79,7 @@ const signOutSuccess = function () {
   $('#create-order-button').hide()
   $('#previous-orders-button').hide()
   $('#buttonCheckout').hide()
+  $('.shopping-cart').empty()
 }
 
 const signOutFailure = function (error) {
