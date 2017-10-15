@@ -3,6 +3,8 @@
 const store = require('../store')
 const productsApi = require('../products/api')
 const productsUi = require('../products/ui')
+const ordersApi = require('../orders/api')
+const ordersUi = require('../orders/ui')
 
 const resetForm = function resetForm ($form) {
   $form.find('input:text, input:password, input:file, select, textarea').val('')
@@ -42,6 +44,9 @@ const signInSuccess = function (data) {
   productsApi.getProduct()
     .then(productsUi.getProductSuccess)
     .catch(productsUi.getProductFailure)
+  ordersApi.createOrder()
+    .then(ordersUi.createOrderSuccess)
+    .catch(ordersUi.createOrderFailure)
 }
 
 const signInFailure = function (error) {

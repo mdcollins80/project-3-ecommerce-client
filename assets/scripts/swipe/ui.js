@@ -1,14 +1,16 @@
 'use strict'
 
-const store = require('../store')
-const ordersApi = require('../orders/api.js')
+const ordersApi = require('../orders/api')
+const ordersUi = require('../orders/ui')
 
 const onCheckoutSuccess = function () {
   ordersApi.updateOrderCompleted()
     .then(() => $('#message').text('Your order has been purchased.  Thanks for shopping with Nozama.com!'))
     .catch(() => $('#message').text('Your charge is complete, but your order has not been updated to purchased.  We will work to rectify this minor error. Do NOT submit your order again or you will be charged twice.'))
   $('.shopping-cart').empty()
-  store.order = null // removes the stored order
+  ordersApi.createOrder()
+    .then(ordersUi.createOrderSuccess)
+    .catch(ordersUi.createOrderFailure)
 }
 
 const onCheckoutFailure = function () {
