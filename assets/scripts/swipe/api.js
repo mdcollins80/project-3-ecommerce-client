@@ -8,6 +8,9 @@ const handleToken = function (token) {
   return $.ajax({
     url: config.apiOrigin + '/charges',
     method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
     data: {
       "amount": store.total,
       "token": token
