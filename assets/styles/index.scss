@@ -65,13 +65,17 @@ input {
 
 .col-md-6 {
   background-color: #fff;
-  border: 1px solid #000;
+  border: 1px solid #e7cd5f;
   overflow-y: auto;
   height: 400px;
 }
 
 .container {
   display: none;
+}
+
+.container h4 {
+    color: #000;
 }
 
 .products-table,

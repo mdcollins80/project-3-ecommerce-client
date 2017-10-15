@@ -80,6 +80,7 @@ const signOutSuccess = function () {
   $('#previous-orders-button').hide()
   $('#buttonCheckout').hide()
   $('.shopping-cart').empty()
+  $('.previous-orders').empty()
 }
 
 const signOutFailure = function (error) {
