@@ -66,6 +66,7 @@ const signOutSuccess = function () {
   console.log('Successfully signed out')
   $('#message').text('Successfully signed out!')
   store.user = null // empty store
+  store.order = null // clear out unfulfilled order
   $('#sign-up').show()
   $('#sign-in').show()
   $('#change-password').hide()
