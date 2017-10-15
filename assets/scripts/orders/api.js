@@ -42,6 +42,22 @@ const updateOrder = (data) => {
   })
 }
 
+const updateOrderCompleted = () => {
+  console.log('updateOrderCompleted api function reached!')
+  return $.ajax({
+    url: config.apiOrigin + '/orders/' + store.order.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: {
+      order: {
+        purchaseStatus: 'true'
+      }
+    }
+  })
+}
+
 const deleteOrder = (id) => {
   console.log('deleteOrder api function reached!')
   return $.ajax({ // return ajax then set up, url, method, data
@@ -71,5 +87,6 @@ module.exports = {
   updateOrder,
   deleteOrder,
   showOrder,
-  showPreviousOrders
+  showPreviousOrders,
+  updateOrderCompleted
 }
