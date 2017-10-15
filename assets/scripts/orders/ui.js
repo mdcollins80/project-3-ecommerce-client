@@ -2,6 +2,7 @@
 
 const store = require('../store')
 const api = require('./api')
+const showPreviousOrders = require('../templates/previous-orders.handlebars')
 
 const showOrderProducts = require('../templates/shopping-cart.handlebars')
 
@@ -68,7 +69,12 @@ const onShowOrderFailure = () => {
 
 const ShowPreviousOrdersSuccess = (data) => {
   console.log('ShowPreviousOrdersSuccess ui function reached!')
-  console.log(data)
+  console.log('data is: ', data)
+  console.log('data.orders is: ', data.orders)
+  const orders = data.orders
+  const showPreviousOrdersHtml = showPreviousOrders({ orders: orders })
+  $('.previous-orders-table').remove()
+  $('.previous-orders').append(showPreviousOrdersHtml)
 }
 
 const ShowPreviousOrdersFailure = (data) => {
