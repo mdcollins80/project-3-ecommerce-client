@@ -25,7 +25,7 @@ input {
   margin-top: 1%;
 }
 
-#message {
+#message, #password-message {
   background-color: #e7cd5f;
   color: #000;
   border-radius: 5px;
@@ -35,6 +35,10 @@ input {
 #change-password, #create-order, #get-product, #update-product, #delete-product, #previous-orders-button, #create-order-button {
  display: none;
  margin-left: 5%;
+}
+
+#sign-up, #sign-in {
+    margin-top: 2%;
 }
 
 .banner {
