@@ -1,0 +1,27 @@
+<!-- duplicated the product-list.handlebars code.
+    Need to update with correct syntax -->
+
+<tbody class="cart-table">
+  <tr>
+    <th>Name</th>
+    <th>Category</th>
+    <th>Price</th>
+  </tr>
+  {{#each products as |product|}}
+  console.log(product)
+    <tr>
+      <td>{{product.name}}</td>
+      <td>{{product.category}}</td>
+      <td>{{product.price}}</td>
+      <td >
+        <form class="cart-product">
+          <input type="hidden" value="{{product.name}}" name="product[name]">
+          <input type="hidden" value="{{product.category}}" name="product[category]">
+          <input type="hidden" value="{{product.price}}" name="product[price]">
+          <input type="hidden" value="{{product.id}}" name="product[id]">
+          <button type="submit" class="btn btn-danger remove-from-cart-btn">Remove from Cart</button>
+        </form>
+      </td>
+    </tr>
+  {{/each}}
+</tbody>

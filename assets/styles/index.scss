@@ -1,2 +1,97 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+body {
+  color: #fff;
+  background-color: #000;
+}
+
+.SubmitButton, button {
+  background-color: #e7cd5f;
+  color: #000;
+  border-radius: 5px;
+}
+input {
+  color: #000;
+}
+
+#buttonCheckout, #sign-out {
+  display: none;
+  margin-left: 80%;
+  margin-top: 1%;
+}
+
+#change-password {
+  margin-top: 1%;
+}
+
+#message {
+  background-color: #e7cd5f;
+  color: #000;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+#change-password, #create-order, #get-product, #update-product, #delete-product, #previous-orders-button, #create-order-button {
+ display: none;
+ margin-left: 5%;
+}
+
+.banner {
+  width: 100%;
+  height: 200px;
+  background-color: #e7cd5f;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.banner-circle {
+  background-color: #000;
+  padding-top: 50px;
+  width: 175px;
+  height: 175px;
+  border-radius: 50%;
+}
+
+.banner-text h1 {
+  font-size: 45px;
+  color: #fff;
+  padding: 1% 40% 0 0;
+  margin-left: -50px;
+}
+.banner-icon {
+  padding: 1% 40% 0 40%;
+}
+
+.col-md-6 {
+  background-color: #fff;
+  border: 1px solid #000;
+  overflow-y: auto;
+  height: 400px;
+}
+
+.container {
+  display: none;
+}
+
+.products-table,
+.shopping-cart,
+.previous-orders {
+  color: #000;
+}
+
+
+footer {
+  margin: 10% 0 5% 0;
+  text-align: center;
+  color: #fff;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+footer a:hover {
+  color: #e7cd5f;
+}
