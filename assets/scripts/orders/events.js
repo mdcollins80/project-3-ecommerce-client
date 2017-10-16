@@ -6,13 +6,13 @@ const getFormFields = require(`../../../lib/get-form-fields`)
 const api = require('./api')
 const ui = require('./ui')
 
-const onCreateOrder = (event) => {
-  event.preventDefault()
-  // console.log('onCreateOrder events function reached!')
-  api.createOrder()
-    .then(ui.createOrderSuccess)
-    .catch(ui.createOrderFailure)
-}
+// const onCreateOrder = (event) => {
+//   event.preventDefault()
+//   console.log('onCreateOrder events function reached!')
+//   api.createOrder()
+//     .then(ui.createOrderSuccess)
+//     .catch(ui.createOrderFailure)
+// }
 
 const onUpdateOrderAdd = (event) => {
   event.preventDefault()
@@ -76,7 +76,6 @@ const onShowPreviousOrders = (event) => {
 }
 
 const addHandlers = function () {
-  $('#create-order-button').on('submit', onCreateOrder)
   $('#show-cart-button').on('submit', onShowOrder)
   $('.product-list').on('submit', onUpdateOrderAdd)
   $('.shopping-cart').on('submit', onUpdateOrderRemove)
