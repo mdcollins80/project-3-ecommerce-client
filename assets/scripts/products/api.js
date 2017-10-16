@@ -43,8 +43,8 @@ const signOut = function () {
 }
 
 const createProduct = (data) => {
-  console.log(data)
-  console.log('createProduct api function reached!')
+  // console.log(data)
+  // console.log('createProduct api function reached!')
   return $.ajax({
     url: config.apiOrigin + '/products/',
     method: 'POST',
@@ -67,7 +67,7 @@ const getProduct = () => {
 }
 
 const updateProduct = (data) => {
-  console.log('updateProduct api function reached!')
+  // console.log('updateProduct api function reached!')
   return $.ajax({ // return ajax then set up, url, method, data
     url: config.apiOrigin + '/products/' + data.product.id,
     method: 'PATCH',
@@ -80,7 +80,7 @@ const updateProduct = (data) => {
 }
 
 const deleteProduct = (id) => {
-  console.log('deleteProduct api function reached!')
+  // console.log('deleteProduct api function reached!')
   return $.ajax({ // return ajax then set up, url, method, data
     url: config.apiOrigin + '/products/' + id,
     method: 'DELETE',

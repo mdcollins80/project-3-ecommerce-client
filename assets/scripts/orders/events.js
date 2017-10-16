@@ -6,13 +6,13 @@ const getFormFields = require(`../../../lib/get-form-fields`)
 const api = require('./api')
 const ui = require('./ui')
 
-const onCreateOrder = (event) => {
-  event.preventDefault()
-  console.log('onCreateOrder events function reached!')
-  api.createOrder()
-    .then(ui.createOrderSuccess)
-    .catch(ui.createOrderFailure)
-}
+// const onCreateOrder = (event) => {
+//   event.preventDefault()
+//   console.log('onCreateOrder events function reached!')
+//   api.createOrder()
+//     .then(ui.createOrderSuccess)
+//     .catch(ui.createOrderFailure)
+// }
 
 const onUpdateOrderAdd = (event) => {
   event.preventDefault()
@@ -33,7 +33,7 @@ const onUpdateOrderAdd = (event) => {
       .then(ui.onUpdateOrderSuccess)
       .catch(ui.onUpdateOrderFailure)
   } else {
-    console.log('farts...Add to Cart button did not work!')
+    // console.log('farts...Add to Cart button did not work!')
   }
 }
 
@@ -41,7 +41,7 @@ const onUpdateOrderRemove = (event) => {
   event.preventDefault()
   if (event.target && event.target.matches('form.cart-product')) {
     const products = getFormFields(event.target)
-    console.log('products is: ', products)
+    // console.log('products is: ', products)
     const data = {
       order: {
         id: store.order.id,
@@ -55,7 +55,7 @@ const onUpdateOrderRemove = (event) => {
       .then(ui.onUpdateOrderSuccess)
       .catch(ui.onUpdateOrderFailure)
   } else {
-    console.log('farts...Remove from Cart button did not work!')
+    $('#message').text('Remove from Cart button did not work!')
   }
 }
 
@@ -76,7 +76,6 @@ const onShowPreviousOrders = (event) => {
 }
 
 const addHandlers = function () {
-  $('#create-order-button').on('submit', onCreateOrder)
   $('#show-cart-button').on('submit', onShowOrder)
   $('.product-list').on('submit', onUpdateOrderAdd)
   $('.shopping-cart').on('submit', onUpdateOrderRemove)

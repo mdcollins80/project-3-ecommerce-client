@@ -7,7 +7,7 @@ const ui = require('./ui')
 
 const onDeleteProduct = (event) => {
   event.preventDefault()
-  console.log('onDeleteProduct events function reached!')
+  // console.log('onDeleteProduct events function reached!')
 }
 
 const addHandlers = function () {

@@ -2,10 +2,10 @@
 
 const config = require('../config')
 const store = require('../store')
-const ordersApi = require('../orders/api.js')
+const ui = require('./ui')
 
 const handleToken = function (token) {
-  console.log('store total is: ', store.total)
+  // console.log('store total is: ', store.total)
   return $.ajax({
     url: config.apiOrigin + '/charges',
     method: 'POST',
@@ -17,8 +17,8 @@ const handleToken = function (token) {
       "token": token
     }
   })
-    .then(ordersApi.updateOrderCompleted)
-    .then(data => console.log('Order has been marked completed', data))
+    .then(ui.onCheckoutSuccess)
+    .catch(ui.onCheckoutFailure)
 }
 module.exports = {
   handleToken

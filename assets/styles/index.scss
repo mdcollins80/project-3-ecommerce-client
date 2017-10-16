@@ -25,7 +25,7 @@ input {
   margin-top: 1%;
 }
 
-#message {
+#message, #password-message {
   background-color: #e7cd5f;
   color: #000;
   border-radius: 5px;
@@ -35,6 +35,10 @@ input {
 #change-password, #create-order, #get-product, #update-product, #delete-product, #previous-orders-button, #create-order-button {
  display: none;
  margin-left: 5%;
+}
+
+#sign-up, #sign-in {
+    margin-top: 2%;
 }
 
 .banner {
@@ -65,13 +69,17 @@ input {
 
 .col-md-6 {
   background-color: #fff;
-  border: 1px solid #000;
+  border: 1px solid #e7cd5f;
   overflow-y: auto;
   height: 400px;
 }
 
 .container {
   display: none;
+}
+
+.container h4 {
+    color: #000;
 }
 
 .products-table,
