@@ -82,6 +82,7 @@ const ShowPreviousOrdersSuccess = (data) => {
   const orders = data.orders
   const showPreviousOrdersHtml = showPreviousOrders({ orders: orders })
   $('.previous-orders-table').remove()
+  $('.previous-orders').empty()
   $('.previous-orders').append(showPreviousOrdersHtml)
 }
 
