@@ -68,7 +68,7 @@ const onShowOrderSuccess = (data) => {
   const showOrderProductsHtml = showOrderProducts({ products: products })
   $('.cart-table').remove()
   $('.shopping-cart').append(showOrderProductsHtml)
-  $('#message').text('You got your cart!')
+  // $('#message').text('You got your cart!')
 }
 
 const onShowOrderFailure = () => {
