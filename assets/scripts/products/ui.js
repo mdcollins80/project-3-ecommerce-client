@@ -50,7 +50,7 @@ const getProductSuccess = (data) => {
   const showProductsHtml = showProducts({ products: data.products })
   $('.products-table').remove()
   $('.product-list').append(showProductsHtml)
-  $('#message').text('You have got products!').show().fadeOut(8000)
+  // $('#message').text('You have got products!').show().fadeOut(8000)
 }
 
 const getProductFailure = (response) => {
