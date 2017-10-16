@@ -32,9 +32,8 @@ const onUpdateOrderAdd = (event) => {
     api.updateOrder(data)
       .then(ui.onUpdateOrderSuccess)
       .catch(ui.onUpdateOrderFailure)
-  } else {
-    // console.log('farts...Add to Cart button did not work!')
   }
+  $('#buttonCheckout').show()
 }
 
 const onUpdateOrderRemove = (event) => {
