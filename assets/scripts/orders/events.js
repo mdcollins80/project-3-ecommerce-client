@@ -33,7 +33,7 @@ const onUpdateOrderAdd = (event) => {
       .then(ui.onUpdateOrderSuccess)
       .catch(ui.onUpdateOrderFailure)
   } else {
-    console.log('farts...Add to Cart button did not work!')
+    // console.log('farts...Add to Cart button did not work!')
   }
 }
 
@@ -41,7 +41,7 @@ const onUpdateOrderRemove = (event) => {
   event.preventDefault()
   if (event.target && event.target.matches('form.cart-product')) {
     const products = getFormFields(event.target)
-    console.log('products is: ', products)
+    // console.log('products is: ', products)
     const data = {
       order: {
         id: store.order.id,

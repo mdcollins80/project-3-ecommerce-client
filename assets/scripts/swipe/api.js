@@ -5,7 +5,7 @@ const store = require('../store')
 const ui = require('./ui')
 
 const handleToken = function (token) {
-  console.log('store total is: ', store.total)
+  // console.log('store total is: ', store.total)
   return $.ajax({
     url: config.apiOrigin + '/charges',
     method: 'POST',
