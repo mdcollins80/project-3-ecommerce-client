@@ -6,6 +6,11 @@ const showPreviousOrders = require('../templates/previous-orders.handlebars')
 
 const showOrderProducts = require('../templates/shopping-cart.handlebars')
 
+const checkOrderLength = function () {
+  if (store.order.product.length === 0) {
+    $('#buttonCheckout').hide()
+  }
+}
 const resetForm = function resetForm ($form) {
   $form.find('input:text, input:password, input:file, select, textarea').val('')
   $form.find('input:radio, input:checkbox')
@@ -28,6 +33,7 @@ const onUpdateOrderSuccess = (id) => {
   $('#message').text('You have updated an order!')
   api.showOrder()
     .then(onShowOrderSuccess)
+    .then(checkOrderLength)
     .catch(onShowOrderFailure)
 }
 
@@ -52,6 +58,7 @@ const onShowOrderSuccess = (data) => {
   // console.log('data.order.products is: ', data.order.products)
   // console.log('ongetOrderSuccess ui reached!')
   const products = data.order.products
+  store.order.product = products
   // console.log('products is: ', products)
   const total = products.reduce(function (sum, num) {
     return sum + num.price
@@ -61,7 +68,7 @@ const onShowOrderSuccess = (data) => {
   const showOrderProductsHtml = showOrderProducts({ products: products })
   $('.cart-table').remove()
   $('.shopping-cart').append(showOrderProductsHtml)
-  $('#message').text('You got your cart!')
+  // $('#message').text('You got your cart!')
 }
 
 const onShowOrderFailure = () => {
