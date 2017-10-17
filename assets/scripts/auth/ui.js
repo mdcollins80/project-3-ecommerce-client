@@ -40,6 +40,7 @@ const signInSuccess = function (data) {
   $('#create-order-button').show()
   $('#create-order').show()
   $('#previous-orders-button').show()
+  $('#sign-up').trigger('reset')
   productsApi.getProduct()
     .then(productsUi.getProductSuccess)
     .catch(productsUi.getProductFailure)
