@@ -85,6 +85,7 @@ const signOutSuccess = function () {
   $('#buttonCheckout').hide()
   $('.shopping-cart').empty()
   $('.previous-orders').empty()
+  $('#change-password').trigger('reset')
 }
 
 const signOutFailure = function () {
