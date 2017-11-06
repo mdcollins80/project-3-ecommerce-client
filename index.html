@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Nozama.com</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="https://checkout.stripe.com/checkout.js"></script>
+    </head>
+    <body class="container-fluid">
+      <!-- <h1>Welcome to Nozama.com!</h1> -->
+
+      <div class="banner">
+        <div class="banner-icon">
+          <div class="banner-circle">
+            <div class="banner-text">
+              <h1>Nozama.com</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p id="message"></p>
+      <form id="sign-up">
+      <fieldset>
+        <!-- <legend>Sign up</legend> -->
+        <input type="text" name="credentials[email]" placeholder="User name">
+        <input type="password" name="credentials[password]" placeholder="Password">
+        <input type="password" name="credentials[password_confirmation]" placeholder="Password Confirmation">
+        <input class="SubmitButton" type="submit" name="submit" value="Sign up">
+      </fieldset>
+    </form>
+
+    <form id="sign-in">
+      <fieldset>
+        <!-- <legend>Sign in</legend> -->
+        <input type="text" name="credentials[email]" placeholder="User name">
+        <input type="password" name="credentials[password]" placeholder="Password">
+        <input class="SubmitButton" type="submit" name="submit" value="Sign in">
+      </fieldset>
+    </form>
+
+    <form id="sign-out">
+      <fieldset>
+        <!-- <legend>Sign out</legend> -->
+        <input class="SubmitButton" type="submit" name="submit" value="Sign out">
+      </fieldset>
+    </form>
+
+    <!--products and shopping cart lists  -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 product-list">
+          <h4>Product list</h4>
+        </div>
+        <div class="col-md-6 shopping-cart">
+          <h4>Shopping cart</h4>
+        </div>
+      </div>
+    </div>
+
+     <div id="shop">
+       <button id="buttonCheckout">Checkout</button>
+     </div>
+
+<!-- Show previous orders on click of button  -->
+    <form id="previous-orders-button">
+      <fieldset>
+        <input class="SubmitButton" type="submit" name="submit" value="Show Previous Orders">
+      </fieldset>
+    </form>
+    <div class="container">
+      <div class="col-md-6 previous-orders">
+        <h4>Previous orders</h4>
+      </div>
+    </div>
+
+<!-- Change password form -->
+<p id="password-message"></p>
+<form id="change-password">
+  <fieldset>
+    <input type="password" name="passwords[old]" placeholder="Old Password">
+    <input type="password" name="passwords[new]" placeholder="New Password">
+    <input class="SubmitButton" type="submit" name="submit" value="Change password">
+  </fieldset>
+</form>
+
+    <footer id="footer">Made by <a href="https://github.com/GA-Brogrammers">Team Brogrammers</a> for General Assembly's Web Development Immersive Program <br>
+      Individually the developers are <a href="https://www.linkedin.com/in/max-mazzone/">Max Mazzone</a>, <a href="https://www.linkedin.com/in/aliciapflaumer/">Alicia Pflaumer</a>, and <a href="https://www.linkedin.com/in/matt-collins-03/">Matt Collins</a>
+    </footer>
+  </body>
+</html>
